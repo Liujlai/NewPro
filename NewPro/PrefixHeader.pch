@@ -1,0 +1,40 @@
+//
+//  PrefixHeader.pch
+//  NewPro
+//
+//  Created by idea on 2018/4/17.
+//  Copyright © 2018年 idea. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+
+#define KSCREEN_WIDTH    [UIScreen mainScreen].bounds.size.width
+#define KSCREEN_HEIGHT   [UIScreen mainScreen].bounds.size.height
+#define KSTATUSBARHEIGHT ([ViewController iPhoneX]?44.0:20.0)
+#define KNAVIGATIONANDSTATUSBARHEIGHT (KSTATUSBARHEIGHT+44.0)
+#import "ViewController.h"
+//#define urlStr @"https://idealjl.herokuapp.com/"
+#define urlStr @"http://localhost:8780/"
+#define Disconnect @"网络连接超时，请检查网络设置"
+#import "NerdyUI.h"
+#import "HUD.h"
+#import "MJRefresh.h"
+
+//#define WeakSelf __weak typeof(self) weakSelf = self;
+//#define WeakObj(o) try{}@finally{} __weak typeof(o) o##Weak = o;
+#define WeakObj(o) autoreleasepool{} __weak typeof(o) o##Weak = o;
+
+
+
+//自定义Log输入日志+显示行号
+#ifdef DEBUG
+#define STLog(FORMAT, ...) fprintf(stderr,"%s:%d\t%s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+#else
+#define STLog(...)
+#endif
+
+
+
+#endif /* PrefixHeader_pch */

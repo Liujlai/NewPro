@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "TabViewController.h"
+#import "LaunchIntroductionView.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +18,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.rootViewController = [TabViewController new];
+    [self.window makeKeyAndVisible];
+//    设置引导页
+    [LaunchIntroductionView sharedWithImages:@[@"refresh1",@"refresh2",@"refresh3",@"refresh4"] buttonImage:@"icon_tab_guangchang_h" buttonFrame:CGRectMake(kScreen_width/2 - 551/4, kScreen_height - 150, 551/2, 45)];
     return YES;
 }
 

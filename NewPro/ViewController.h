@@ -6,10 +6,10 @@
 //  Copyright © 2018年 idea. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : BaseViewController
 
-
++ (BOOL)iPhoneX;
 @end
 
