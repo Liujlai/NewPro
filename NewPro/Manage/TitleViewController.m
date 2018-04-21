@@ -39,7 +39,7 @@
 {
     
     NSLog(@"tag:%@  message=%@",tag,message);
-    
+    [self setupPageView];
 }
 #pragma mark 接口请求成功 sucess=0
 -(void)Sucess:(id)response tag:(NSString*)tag
@@ -52,8 +52,9 @@
     }
 }
 - (void)setupPageView {
-
-//    self.titleArr = @[@"精选", @"电影", @"电视剧", @"综艺", @"NBA", @"娱乐", @"动漫", @"演唱会", @"天天"];
+    if (!self.titleArr){
+            self.titleArr = @[@"精选", @"电影", @"电视剧", @"综艺", @"NBA", @"娱乐", @"动漫", @"演唱会", @"天天"];
+    }
     SGPageTitleViewConfigure *configure = [SGPageTitleViewConfigure pageTitleViewConfigure];
     
     /// pageTitleView

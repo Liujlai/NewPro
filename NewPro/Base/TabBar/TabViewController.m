@@ -32,6 +32,7 @@
     //我的
     MineViewController *vc2 = [MineViewController new];
     [self addChildViewController:vc2 imageName:@"icon_tab_wo" title:@"我的"];
+    
     // Do any additional setup after loading the view.
 }
 
@@ -53,7 +54,7 @@
     NSDictionary *normalAttrDict = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:12], NSFontAttributeName, nil];
     [childCtrl.tabBarItem setTitleTextAttributes:normalAttrDict forState:UIControlStateNormal];
     
-    UIColor *textColor = [UIColor colorWithRed:(68./255.) green:(181./255.) blue:(233./255.) alpha:1.];
+    UIColor *textColor = Color(AppColor);
     NSDictionary *selectedAttrDict = [NSDictionary dictionaryWithObjectsAndKeys:textColor, NSForegroundColorAttributeName, nil];
     [childCtrl.tabBarItem setTitleTextAttributes:selectedAttrDict forState:UIControlStateSelected];
     

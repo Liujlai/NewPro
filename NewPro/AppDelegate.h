@@ -12,6 +12,9 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
-
+//加载所有的视图控制器
+-(void)loadAllViewController;
+//加载登录视图控制器
+-(void)loadLoginViewController;
 @end
 

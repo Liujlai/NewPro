@@ -19,14 +19,31 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.rootViewController = [TabViewController new];
     [self.window makeKeyAndVisible];
 //    设置引导页
     [LaunchIntroductionView sharedWithImages:@[@"refresh1",@"refresh2",@"refresh3",@"refresh4"] buttonImage:@"icon_tab_guangchang_h" buttonFrame:CGRectMake(kScreen_width/2 - 551/4, kScreen_height - 150, 551/2, 45)];
+    NSString *token = [DEFAULTS objectForKey:@"token"];
+    if (token) {
+        [self loadAllViewController];
+    }else{
+        [self loadLoginViewController];
+    }
+
     return YES;
 }
 
-
+//加载所有的视图控制器
+-(void)loadAllViewController{
+    self.window.rootViewController = [TabViewController new];
+}
+//加载登录视图控制器
+-(void)loadLoginViewController{
+    UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"loginViewController" bundle:nil];
+    
+    UINavigationController * nav = [storyboard  instantiateViewControllerWithIdentifier:@"Login"];
+    
+    self.window.rootViewController = nav;
+}
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

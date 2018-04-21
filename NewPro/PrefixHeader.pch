@@ -15,13 +15,17 @@
 #define KSTATUSBARHEIGHT ([ViewController iPhoneX]?44.0:20.0)
 #define KNAVIGATIONANDSTATUSBARHEIGHT (KSTATUSBARHEIGHT+44.0)
 #import "ViewController.h"
-//#define urlStr @"https://idealjl.herokuapp.com/"
-#define urlStr @"http://localhost:8780/"
+#define urlStr @"https://idealjl.herokuapp.com/"
+//#define urlStr @"http://localhost:8780/"
 #define Disconnect @"网络连接超时，请检查网络设置"
 #import "NerdyUI.h"
 #import "HUD.h"
 #import "MJRefresh.h"
+#import <JHChainableAnimations/JHChainableAnimator.h>
 
+
+#import "AppDelegate.h"
+//弱引用
 //#define WeakSelf __weak typeof(self) weakSelf = self;
 //#define WeakObj(o) try{}@finally{} __weak typeof(o) o##Weak = o;
 #define WeakObj(o) autoreleasepool{} __weak typeof(o) o##Weak = o;
@@ -35,6 +39,14 @@
 #define STLog(...)
 #endif
 
+//存储数据
+#define DEFAULTS [NSUserDefaults standardUserDefaults]
 
+//Appdelegate
+#define ShareApplicationDelegate [UIApplication sharedApplication].delegate
+
+
+//颜色
+#define AppColor @"#21bed9"
 
 #endif /* PrefixHeader_pch */

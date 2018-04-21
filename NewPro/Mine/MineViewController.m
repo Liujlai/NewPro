@@ -11,7 +11,6 @@
 #import "InfoViewController.h"
 #import "StetsViewController.h"
 
-#import <JHChainableAnimations/JHChainableAnimator.h>
 
 @interface MineViewController ()<UITableViewDelegate,UITableViewDataSource>
 

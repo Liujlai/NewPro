@@ -32,6 +32,15 @@
                 [selfWeak cleanCaches];
                 
             })
+                    ),
+            Section(
+                    Row.custom(^(id contentView) {
+                Label.str(@"退出登录").color(AppColor).centerAlignment.embedIn(contentView);
+            }).onClick(^{
+                [DEFAULTS removeObjectForKey :@"token"];
+                //调界面
+                [(AppDelegate *)ShareApplicationDelegate loadLoginViewController];
+            })
                     )
             ).embedIn(self.view);
 }

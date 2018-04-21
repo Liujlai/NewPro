@@ -8,7 +8,6 @@
 
 #import "InfoViewController.h"
 #import "InfoTableViewCell.h"
-#import <JHChainableAnimations/JHChainableAnimator.h>
 
 @interface InfoViewController ()<UITableViewDelegate,UITableViewDataSource>
 

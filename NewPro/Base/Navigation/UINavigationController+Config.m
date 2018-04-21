@@ -12,7 +12,7 @@
 
 -(void)configNavBarColor{
     
-    [self.navigationBar setBarTintColor:[UIColor colorWithRed:33/255. green:190/255. blue:217/255. alpha:1.0]];// 显示颜色是：0x21bed9 即 DOCTOR_COLOR_BLUE
+    [self.navigationBar setBarTintColor:Color(AppColor)];// 显示颜色是：0x21bed9 即 DOCTOR_COLOR_BLUE
     [self.navigationBar  setTintColor:[UIColor whiteColor]];
     self.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
 }
