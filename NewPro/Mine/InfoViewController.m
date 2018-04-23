@@ -8,9 +8,12 @@
 
 #import "InfoViewController.h"
 #import "InfoTableViewCell.h"
-#import <BRPickerView.h>
+#import <BRPickerView.h> //选生日。时间。...
+#import "SelectPhotoManager.h" //选头像
 
 @interface InfoViewController ()
+
+@property (nonatomic, strong)SelectPhotoManager *photoManager;
 @end
 
 @implementation InfoViewController
@@ -18,6 +21,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"账户信息";
+    UIImage *img = [UIImage imageWithData:[DEFAULTS objectForKey:@"headerImage"]];
+    if (img) {
+        self.userIcon.image = img;
+        
+    }
     [self setupTable];
     
     // Do any additional setup after loading the view.
@@ -33,7 +41,7 @@
                 JHChainableAnimator *animator = [[JHChainableAnimator alloc] initWithView:self.userIcon];
                 animator.rotate(3600).animate(60);
         
-            }).cellHeightAuto.disclosure,
+            }).cellHeightAuto.disclosure.onClick(@"setPhoto"),
             Row.str(arr[1]).custom(^(id contentView){
                 self.nick =TextField.hint(@"输入昵称(≥15字)").maxLength(15).rightAlignment.embedIn(contentView,10,NERNull,10,40);
             }).disclosure,
@@ -46,6 +54,22 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)setPhoto{
+    
+    if (!_photoManager) {
+        _photoManager =[[SelectPhotoManager alloc]init];
+    }
+    [_photoManager startSelectPhotoWithImageName:@"选择头像"];
+     @WeakObj(self);
+    //选取照片成功
+    _photoManager.successHandle=^(SelectPhotoManager *manager,UIImage *image){
+        
+        selfWeak.userIcon.image = image;
+        //保存到本地
+        NSData *data = UIImagePNGRepresentation(image);
+        [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"headerImage"];
+    };
+}
 
 //设置性别
 - (void)setSEX

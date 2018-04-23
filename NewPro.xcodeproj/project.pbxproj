@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7659BCDB3CF23C5D8C3901FB /* libPods-NewPro.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E3A1709ADAD90CB96D461ED /* libPods-NewPro.a */; };
 		784C476C208B14BF00DA0C2A /* loginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 784C476B208B14BF00DA0C2A /* loginViewController.m */; };
+		785BCBBE208DB30C003D86A8 /* SelectPhotoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 785BCBBD208DB30C003D86A8 /* SelectPhotoManager.m */; };
 		7866B042208B258D0032A642 /* loginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7866B041208B258D0032A642 /* loginViewController.storyboard */; };
 		7869AE352085E651002C0DDA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7869AE342085E651002C0DDA /* AppDelegate.m */; };
 		7869AE382085E651002C0DDA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7869AE372085E651002C0DDA /* ViewController.m */; };
@@ -51,6 +52,8 @@
 		4E3A1709ADAD90CB96D461ED /* libPods-NewPro.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NewPro.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		784C476A208B14BF00DA0C2A /* loginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = loginViewController.h; sourceTree = "<group>"; };
 		784C476B208B14BF00DA0C2A /* loginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = loginViewController.m; sourceTree = "<group>"; };
+		785BCBBC208DB30C003D86A8 /* SelectPhotoManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectPhotoManager.h; sourceTree = "<group>"; };
+		785BCBBD208DB30C003D86A8 /* SelectPhotoManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectPhotoManager.m; sourceTree = "<group>"; };
 		7866B041208B258D0032A642 /* loginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = loginViewController.storyboard; sourceTree = "<group>"; };
 		7869AE302085E651002C0DDA /* NewPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7869AE332085E651002C0DDA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -139,6 +142,26 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		785BCBBB208DB268003D86A8 /* template */ = {
+			isa = PBXGroup;
+			children = (
+				7869AE7F2085F2F3002C0DDA /* LaunchIntroduction */,
+				7869AE492085E9AA002C0DDA /* Base */,
+				7869AE552085EB24002C0DDA /* HUD */,
+				785BCBBF208DB39C003D86A8 /* SelectPhoto */,
+			);
+			path = template;
+			sourceTree = "<group>";
+		};
+		785BCBBF208DB39C003D86A8 /* SelectPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				785BCBBC208DB30C003D86A8 /* SelectPhotoManager.h */,
+				785BCBBD208DB30C003D86A8 /* SelectPhotoManager.m */,
+			);
+			path = SelectPhoto;
+			sourceTree = "<group>";
+		};
 		7869AE272085E651002C0DDA = {
 			isa = PBXGroup;
 			children = (
@@ -169,8 +192,7 @@
 				7869AE6F2085EC78002C0DDA /* Home */,
 				7890109420874E2B00331BBF /* Manage */,
 				787198C72088393C0014535A /* Mine */,
-				7869AE552085EB24002C0DDA /* HUD */,
-				7869AE492085E9AA002C0DDA /* Base */,
+				785BCBBB208DB268003D86A8 /* template */,
 				7869AE742085F2F3002C0DDA /* Other */,
 				7869AE392085E651002C0DDA /* Main.storyboard */,
 				7869AE3C2085E652002C0DDA /* Assets.xcassets */,
@@ -247,7 +269,6 @@
 			isa = PBXGroup;
 			children = (
 				7869AE752085F2F3002C0DDA /* Network */,
-				7869AE7F2085F2F3002C0DDA /* LaunchIntroduction */,
 				7869AE822085F2F3002C0DDA /* Api */,
 			);
 			path = Other;
@@ -468,6 +489,7 @@
 				787198CD2088633D0014535A /* InfoTableViewCell.m in Sources */,
 				7869AE682085EB25002C0DDA /* HUD.m in Sources */,
 				784C476C208B14BF00DA0C2A /* loginViewController.m in Sources */,
+				785BCBBE208DB30C003D86A8 /* SelectPhotoManager.m in Sources */,
 				7869AE652085EB25002C0DDA /* ZCZLabel.m in Sources */,
 				7869AE862085F2F3002C0DDA /* MyAFHTTPSessionManager.m in Sources */,
 				7890109020871B0B00331BBF /* ManageViewController.m in Sources */,
@@ -631,7 +653,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/NewPro/PrefixHeader.pch";
 				INFOPLIST_FILE = NewPro/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.youlu.NewPro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -647,7 +672,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/NewPro/PrefixHeader.pch";
 				INFOPLIST_FILE = NewPro/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.youlu.NewPro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
