@@ -19,16 +19,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    [self.window makeKeyAndVisible];
-//    设置引导页
-    [LaunchIntroductionView sharedWithImages:@[@"refresh1",@"refresh2",@"refresh3",@"refresh4"] buttonImage:@"icon_tab_guangchang_h" buttonFrame:CGRectMake(kScreen_width/2 - 551/4, kScreen_height - 150, 551/2, 45)];
     NSString *token = [DEFAULTS objectForKey:@"token"];
-    if (token) {
+    if (token) {        //判断是否登录
         [self loadAllViewController];
     }else{
         [self loadLoginViewController];
     }
-
+    [self.window makeKeyAndVisible];
+    //引导页
+    [LaunchIntroductionView sharedWithImages:@[@"refresh1",@"refresh2",@"refresh3",@"refresh4"] buttonImage:@"icon_tab_guangchang_h" buttonFrame:CGRectMake(kScreen_width/2 - 551/4, kScreen_height - 150, 551/2, 45)];
     return YES;
 }
 
