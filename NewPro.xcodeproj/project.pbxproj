@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7659BCDB3CF23C5D8C3901FB /* libPods-NewPro.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E3A1709ADAD90CB96D461ED /* libPods-NewPro.a */; };
+		78431071208DD099000A9162 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78431070208DD099000A9162 /* SignUpViewController.m */; };
+		78431074208DD57A000A9162 /* CountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 78431073208DD57A000A9162 /* CountDown.m */; };
 		784C476C208B14BF00DA0C2A /* loginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 784C476B208B14BF00DA0C2A /* loginViewController.m */; };
 		785BCBBE208DB30C003D86A8 /* SelectPhotoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 785BCBBD208DB30C003D86A8 /* SelectPhotoManager.m */; };
 		7866B042208B258D0032A642 /* loginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7866B041208B258D0032A642 /* loginViewController.storyboard */; };
@@ -50,6 +52,10 @@
 /* Begin PBXFileReference section */
 		427EF92497208B1A5559DA97 /* Pods-NewPro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewPro.release.xcconfig"; path = "Pods/Target Support Files/Pods-NewPro/Pods-NewPro.release.xcconfig"; sourceTree = "<group>"; };
 		4E3A1709ADAD90CB96D461ED /* libPods-NewPro.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NewPro.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7843106F208DD099000A9162 /* SignUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		78431070208DD099000A9162 /* SignUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		78431072208DD57A000A9162 /* CountDown.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CountDown.h; sourceTree = "<group>"; };
+		78431073208DD57A000A9162 /* CountDown.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CountDown.m; sourceTree = "<group>"; };
 		784C476A208B14BF00DA0C2A /* loginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = loginViewController.h; sourceTree = "<group>"; };
 		784C476B208B14BF00DA0C2A /* loginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = loginViewController.m; sourceTree = "<group>"; };
 		785BCBBC208DB30C003D86A8 /* SelectPhotoManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectPhotoManager.h; sourceTree = "<group>"; };
@@ -132,11 +138,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		78431075208DE104000A9162 /* CountDown */ = {
+			isa = PBXGroup;
+			children = (
+				78431072208DD57A000A9162 /* CountDown.h */,
+				78431073208DD57A000A9162 /* CountDown.m */,
+			);
+			path = CountDown;
+			sourceTree = "<group>";
+		};
 		784C476D208B14CA00DA0C2A /* Login */ = {
 			isa = PBXGroup;
 			children = (
 				784C476A208B14BF00DA0C2A /* loginViewController.h */,
 				784C476B208B14BF00DA0C2A /* loginViewController.m */,
+				7843106F208DD099000A9162 /* SignUpViewController.h */,
+				78431070208DD099000A9162 /* SignUpViewController.m */,
 				7866B041208B258D0032A642 /* loginViewController.storyboard */,
 			);
 			path = Login;
@@ -148,6 +165,7 @@
 				7869AE7F2085F2F3002C0DDA /* LaunchIntroduction */,
 				7869AE492085E9AA002C0DDA /* Base */,
 				7869AE552085EB24002C0DDA /* HUD */,
+				78431075208DE104000A9162 /* CountDown */,
 				785BCBBF208DB39C003D86A8 /* SelectPhoto */,
 			);
 			path = template;
@@ -486,6 +504,7 @@
 				787198D020886FDC0014535A /* InfoViewController.m in Sources */,
 				7869AE542085E9AA002C0DDA /* TabViewController.m in Sources */,
 				7869AE882085F2F3002C0DDA /* NSArray+NullSafe.m in Sources */,
+				78431074208DD57A000A9162 /* CountDown.m in Sources */,
 				787198CD2088633D0014535A /* InfoTableViewCell.m in Sources */,
 				7869AE682085EB25002C0DDA /* HUD.m in Sources */,
 				784C476C208B14BF00DA0C2A /* loginViewController.m in Sources */,
@@ -500,6 +519,7 @@
 				7869AE522085E9AA002C0DDA /* BaseViewController.m in Sources */,
 				7869AE722085EC78002C0DDA /* HomeViewController.m in Sources */,
 				7869AE532085E9AA002C0DDA /* UINavigationController+Config.m in Sources */,
+				78431071208DD099000A9162 /* SignUpViewController.m in Sources */,
 				7890109320874A1100331BBF /* LHeader.m in Sources */,
 				7869AE6C2085EB25002C0DDA /* ZProgressView.m in Sources */,
 				787198C6208831B50014535A /* MineViewController.m in Sources */,
