@@ -16,7 +16,7 @@
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *NormalLayoutConstraint;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *ShowLayoutConstraint;
 @end
-
+#pragma mark - 登录界面
 @implementation loginViewController
 
 - (void)viewDidLoad {

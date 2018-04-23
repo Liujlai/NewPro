@@ -15,6 +15,8 @@ target 'NewPro' do
   pod 'NerdyUI'
   
   pod 'MJRefresh'
+  
+  pod 'BRPickerView'
   # Pods for NewPro
 
 end

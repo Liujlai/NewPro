@@ -36,13 +36,13 @@
                         @"👏🏻"
                         ];
     
-    
+//    上下滚动的轮播图
 //    SDCycleScrollView *cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, -370, KSCREEN_WIDTH, 180) shouldInfiniteLoop:YES imageNamesGroup:imagesURLStrings];
 //    cycleScrollView.delegate = self;
 //    cycleScrollView.pageControlStyle = SDCycleScrollViewPageContolStyleClassic;
 //    [self.table addSubview:cycleScrollView];
 //    cycleScrollView.scrollDirection = UICollectionViewScrollDirectionVertical;
-    
+//    左右滚动的轮播图
     SDCycleScrollView *cycleScrollView2 = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, -180, KSCREEN_WIDTH, 180) delegate:self placeholderImage:[UIImage imageNamed:@"placeholder"]];
     
     cycleScrollView2.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;

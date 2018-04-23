@@ -8,9 +8,9 @@
 
 #import "InfoViewController.h"
 #import "InfoTableViewCell.h"
+#import <BRPickerView.h>
 
-@interface InfoViewController ()<UITableViewDelegate,UITableViewDataSource>
-
+@interface InfoViewController ()
 @end
 
 @implementation InfoViewController
@@ -18,67 +18,60 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"账户信息";
+    [self setupTable];
     
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
 }
-- (void)viewWillAppear:(BOOL)animated
-{
-    [self.tableView reloadData];
+
+-(void)setupTable{
+    NSArray *arr = @[@"头像",@"昵称",@"性别",@"生日"];
+    
+    PlainTV(
+            Row.str(arr[0]).custom(^(id contentView){
+                self.userIcon = ImageView.img(@"userIcon").fixWH(60,60).embedIn(contentView,10,NERNull,10,40);
+                JHChainableAnimator *animator = [[JHChainableAnimator alloc] initWithView:self.userIcon];
+                animator.rotate(3600).animate(60);
+        
+            }).cellHeightAuto.disclosure,
+            Row.str(arr[1]).custom(^(id contentView){
+                self.nick =TextField.hint(@"输入昵称(≥15字)").maxLength(15).rightAlignment.embedIn(contentView,10,NERNull,10,40);
+            }).disclosure,
+            Row.str(arr[2]).detailStr(self.sex).disclosure.onClick(@"setSEX"),
+            Row.str(arr[3]).detailStr(self.brith).disclosure.onClick(@"DatePicker")
+            ).embedIn(self.view);
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
--(UITableView *)tableView
+
+//设置性别
+- (void)setSEX
 {
-    if(_tableView == nil){
-        _tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
-        _tableView.delegate = self;
-        _tableView.dataSource = self;
-        _tableView.tableFooterView = [UIView new];
-        [_tableView registerClass:[InfoTableViewCell class] forCellReuseIdentifier:@"Mcell"];
-        [self.view addSubview:_tableView];
-        _tableView.makeCons(^{
-            make.edge.equal.constants(0);
-        });
-    }
-    return _tableView;
+    ActionSheet.title(@"选择性别").destructiveAction(@"男", ^{
+        self.sex = @"男";
+        [self setupTable];
+    }).action(@"女", ^{
+        self.sex = @"女";
+        [self setupTable];
+    }).cancelAction(@"取消").show();
+    
+}
+//选择生日
+-(void)DatePicker{
+    NSDate *minDate = [NSDate setYear:1970 month:3 day:3];
+    NSDate *maxDate = [NSDate date];
+    @WeakObj(self);
+    [BRDatePickerView showDatePickerWithTitle:@"出生日期" dateType:BRDatePickerModeYMD defaultSelValue:selfWeak.brith minDate:minDate maxDate:maxDate isAutoSelect:YES themeColor:nil resultBlock:^(NSString *selectValue) {
+        selfWeak.brith = selectValue;
+        [self setupTable];
+    } cancelBlock:^{
+        NSLog(@"点击了背景或取消按钮");
+    }];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return 4;
-}
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (indexPath.row == 0) {
-        static NSString *ID = @"Mcell";
-        InfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator; //显示最右边的箭头
-        cell.title.text = @"头像";
-        //        设置1分钟的动画
-        JHChainableAnimator *animator = [[JHChainableAnimator alloc] initWithView:cell.icon];
-        animator.rotate(3600).animate(60);
-        cell.icon.image = [UIImage imageNamed:@"refresh1"];
-        return cell;
-    }else{
-        static NSString *ID = @"cell";
-        NSArray *arr = @[@"昵称",@"性别",@"生日"];
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-        if(cell == nil){
-            cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:ID];
-        }
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator; //显示最右边的箭头
-        cell.textLabel.text = arr[indexPath.row-1];
-        cell.detailTextLabel.text = arr[indexPath.row-1];
-    return cell;
-    }
-}
-- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return UITableViewAutomaticDimension;
-}
+
 
 @end

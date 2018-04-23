@@ -7,7 +7,7 @@
 //
 
 #import "MJRefreshNormalHeader.h"
-//自定义Header
+#pragma mark - 自定义Header
 @interface LHeader : MJRefreshNormalHeader
 
 @end

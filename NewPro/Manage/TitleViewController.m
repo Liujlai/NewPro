@@ -16,7 +16,6 @@
 @property (nonatomic, strong) SGPageContentView *pageContentView;
 @property (nonatomic, strong) NSArray *titleArr;
 @end
-
 @implementation TitleViewController
 
 - (void)viewDidLoad {
@@ -25,7 +24,6 @@
     
     [self loadData];
 }
-
 
 
 -(void)loadData

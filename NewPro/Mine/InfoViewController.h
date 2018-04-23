@@ -10,4 +10,8 @@
 
 @interface InfoViewController : UIViewController
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, copy) NSString *brith;
+@property (nonatomic, copy) NSString *sex;
+@property (nonatomic, strong) UIImageView *userIcon;
+@property (nonatomic, strong) UITextField *nick;
 @end
