@@ -15,6 +15,9 @@
 
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *NormalLayoutConstraint;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *ShowLayoutConstraint;
+
+
+@property (nonatomic, strong) UIImageView *pwdRightImg;
 @end
 #pragma mark - 登录界面
 @implementation loginViewController
@@ -89,11 +92,31 @@
     self.nameTextfield.leftViewMode = UITextFieldViewModeAlways;
     self.pwdTextfield.leftView = ImageView.img(@"pwdImg").xywh(4,4,32,32);
     self.pwdTextfield.leftViewMode = UITextFieldViewModeAlways;
+    self.pwdRightImg = ImageView.img(@"icon_tab_guangchang").onClick(@"setupPwd:");
+    self.pwdRightImg.tag = 1;
+    self.pwdTextfield.rightView = self.pwdRightImg;
+  
+    self.pwdTextfield.rightViewMode = UITextFieldViewModeWhileEditing;
     self.loginBg.img(@"loginBG");
     self.logoImg.borderRadius(20);
     [self setupAnimator];
     
 }
+//切换密码框是否显示明文
+-(void)setupPwd:(UIImageView*)serder
+{
+    if (self.pwdRightImg.tag == 1) {
+        self.pwdTextfield.rightView = self.pwdRightImg.img(@"icon_tab_guangchang_h");
+        [self.pwdTextfield setSecureTextEntry:NO];
+        self.pwdRightImg.tag = 0;
+    }else{
+        self.pwdTextfield.rightView = self.pwdRightImg.img(@"icon_tab_guangchang");
+        [self.pwdTextfield setSecureTextEntry:YES];
+        self.pwdRightImg.tag = 1;
+    }
+}
+
+
 -(void)setupAnimator
 {
     JHChainableAnimator *logoAnimator = [[JHChainableAnimator alloc] initWithView:self.logoImg];
