@@ -10,6 +10,7 @@
 		7659BCDB3CF23C5D8C3901FB /* libPods-NewPro.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E3A1709ADAD90CB96D461ED /* libPods-NewPro.a */; };
 		78431071208DD099000A9162 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78431070208DD099000A9162 /* SignUpViewController.m */; };
 		78431074208DD57A000A9162 /* CountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 78431073208DD57A000A9162 /* CountDown.m */; };
+		784A3B1B208EBF0800984197 /* ResetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 784A3B1A208EBF0800984197 /* ResetViewController.m */; };
 		784C476C208B14BF00DA0C2A /* loginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 784C476B208B14BF00DA0C2A /* loginViewController.m */; };
 		785BCBBE208DB30C003D86A8 /* SelectPhotoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 785BCBBD208DB30C003D86A8 /* SelectPhotoManager.m */; };
 		7866B042208B258D0032A642 /* loginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7866B041208B258D0032A642 /* loginViewController.storyboard */; };
@@ -56,6 +57,8 @@
 		78431070208DD099000A9162 /* SignUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		78431072208DD57A000A9162 /* CountDown.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CountDown.h; sourceTree = "<group>"; };
 		78431073208DD57A000A9162 /* CountDown.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CountDown.m; sourceTree = "<group>"; };
+		784A3B19208EBF0800984197 /* ResetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResetViewController.h; sourceTree = "<group>"; };
+		784A3B1A208EBF0800984197 /* ResetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResetViewController.m; sourceTree = "<group>"; };
 		784C476A208B14BF00DA0C2A /* loginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = loginViewController.h; sourceTree = "<group>"; };
 		784C476B208B14BF00DA0C2A /* loginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = loginViewController.m; sourceTree = "<group>"; };
 		785BCBBC208DB30C003D86A8 /* SelectPhotoManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectPhotoManager.h; sourceTree = "<group>"; };
@@ -154,6 +157,8 @@
 				784C476B208B14BF00DA0C2A /* loginViewController.m */,
 				7843106F208DD099000A9162 /* SignUpViewController.h */,
 				78431070208DD099000A9162 /* SignUpViewController.m */,
+				784A3B19208EBF0800984197 /* ResetViewController.h */,
+				784A3B1A208EBF0800984197 /* ResetViewController.m */,
 				7866B041208B258D0032A642 /* loginViewController.storyboard */,
 			);
 			path = Login;
@@ -501,6 +506,7 @@
 			files = (
 				787198CA20883B540014535A /* MineTableViewCell.m in Sources */,
 				7869AE872085F2F3002C0DDA /* NSDictionary+NullSafe.m in Sources */,
+				784A3B1B208EBF0800984197 /* ResetViewController.m in Sources */,
 				787198D020886FDC0014535A /* InfoViewController.m in Sources */,
 				7869AE542085E9AA002C0DDA /* TabViewController.m in Sources */,
 				7869AE882085F2F3002C0DDA /* NSArray+NullSafe.m in Sources */,
