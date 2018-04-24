@@ -26,6 +26,7 @@
         self.userIcon.image = img;
         
     }
+    self.nick = TextField;
     [self setupTable];
     
     // Do any additional setup after loading the view.
@@ -34,7 +35,6 @@
 
 -(void)setupTable{
     NSArray *arr = @[@"头像",@"昵称",@"性别",@"生日"];
-    
     PlainTV(
             Row.str(arr[0]).custom(^(id contentView){
                 self.userIcon = ImageView.img(@"userIcon").fixWH(60,60).embedIn(contentView,10,NERNull,10,40);
@@ -43,7 +43,8 @@
         
             }).cellHeightAuto.disclosure.onClick(@"setPhoto"),
             Row.str(arr[1]).custom(^(id contentView){
-                self.nick =TextField.hint(@"输入昵称(≥15字)").maxLength(15).rightAlignment.embedIn(contentView,10,NERNull,10,40);
+                self.nick.hint(self.nickName ? self.nickName:@"输入昵称(≥15字)").maxLength(15).rightAlignment.embedIn(contentView,10,NERNull,10,40);
+                self.nickName = self.nick.text;
             }).disclosure,
             Row.str(arr[2]).detailStr(self.sex).disclosure.onClick(@"setSEX"),
             Row.str(arr[3]).detailStr(self.brith).disclosure.onClick(@"DatePicker")

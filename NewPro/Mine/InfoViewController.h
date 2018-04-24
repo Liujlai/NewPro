@@ -14,4 +14,5 @@
 @property (nonatomic, copy) NSString *sex;
 @property (nonatomic, strong) UIImageView *userIcon;
 @property (nonatomic, strong) UITextField *nick;
+@property (nonatomic, copy) NSString *nickName;
 @end

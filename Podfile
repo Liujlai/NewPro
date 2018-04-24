@@ -17,6 +17,7 @@ target 'NewPro' do
   pod 'MJRefresh'
   
   pod 'BRPickerView'
+  pod 'IQKeyboardManager'
   # Pods for NewPro
 
 end
