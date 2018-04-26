@@ -208,7 +208,6 @@
 			children = (
 				7869AE332085E651002C0DDA /* AppDelegate.h */,
 				7869AE342085E651002C0DDA /* AppDelegate.m */,
-				7869AE732085EED4002C0DDA /* PrefixHeader.pch */,
 				7869AE362085E651002C0DDA /* ViewController.h */,
 				7869AE372085E651002C0DDA /* ViewController.m */,
 				784C476D208B14CA00DA0C2A /* Login */,
@@ -218,6 +217,7 @@
 				785BCBBB208DB268003D86A8 /* template */,
 				7869AE742085F2F3002C0DDA /* Other */,
 				7869AE392085E651002C0DDA /* Main.storyboard */,
+				7869AE732085EED4002C0DDA /* PrefixHeader.pch */,
 				7869AE3C2085E652002C0DDA /* Assets.xcassets */,
 				7869AE3E2085E652002C0DDA /* LaunchScreen.storyboard */,
 				7869AE412085E652002C0DDA /* Info.plist */,
@@ -681,7 +681,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/NewPro/PrefixHeader.pch";
 				INFOPLIST_FILE = NewPro/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.youlu.NewPro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -697,7 +700,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/NewPro/PrefixHeader.pch";
 				INFOPLIST_FILE = NewPro/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.youlu.NewPro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

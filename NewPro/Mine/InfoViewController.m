@@ -33,8 +33,10 @@
     self.view.backgroundColor = [UIColor whiteColor];
 }
 
+
 -(void)setupTable{
     NSArray *arr = @[@"头像",@"昵称",@"性别",@"生日"];
+    [self.view.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)]; //删除视图
     PlainTV(
             Row.str(arr[0]).custom(^(id contentView){
                 self.userIcon = ImageView.img(@"userIcon").fixWH(60,60).embedIn(contentView,10,NERNull,10,40);
@@ -91,7 +93,7 @@
     @WeakObj(self);
     [BRDatePickerView showDatePickerWithTitle:@"出生日期" dateType:BRDatePickerModeYMD defaultSelValue:selfWeak.brith minDate:minDate maxDate:maxDate isAutoSelect:YES themeColor:nil resultBlock:^(NSString *selectValue) {
         selfWeak.brith = selectValue;
-        [self setupTable];
+       [self setupTable];
     } cancelBlock:^{
         NSLog(@"点击了背景或取消按钮");
     }];
